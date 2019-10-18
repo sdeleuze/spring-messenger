@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<htmls>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Spring Messenger</title>
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+	</head>
+	<body>
+		<form id="message-form" class="pure-form">
+			<fieldset>
+				<legend>Message form</legend>
+
+				<select id="user-select">
+					{{#users}}
+					<option value="{{login}}">{{firstname}} {{lastname}}</option>
+					{{/users}}
+				</select>
+
+				<input type="text" id="message-input" required placeholder="Message" />
+
+				<input type="button" id="submit-button" value="Send">
+
+			</fieldset>
+		</form>
+	</div>
+	<p>
+		<ul id="messages"></ul>
+	</p>
+	</body>
+</htmls>
