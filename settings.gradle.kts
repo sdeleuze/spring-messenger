@@ -1,6 +1,6 @@
 rootProject.name = "spring-messenger"
 
-include("backend")
+include("backend", "bot")
 
 pluginManagement {
 	val springBootVersion = "2.2.0.RELEASE"

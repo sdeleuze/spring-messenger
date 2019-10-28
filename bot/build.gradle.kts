@@ -24,10 +24,6 @@ configurations {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-rsocket")
-	implementation("org.springframework.boot:spring-boot-starter-mustache")
-	implementation("org.springframework.boot:spring-boot-starter-webflux")
-	implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc")
-	implementation("io.r2dbc:r2dbc-h2")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -37,12 +33,6 @@ dependencies {
 	}
 	testImplementation("io.projectreactor:reactor-test")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-}
-
-dependencyManagement {
-	imports {
-		mavenBom("org.springframework.boot.experimental:spring-boot-bom-r2dbc:0.1.0.M2")
-	}
 }
 
 tasks.withType<Test> {
