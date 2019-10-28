@@ -10,12 +10,10 @@ import org.springframework.messaging.rsocket.RSocketRequester
 import org.springframework.messaging.rsocket.connectTcpAndAwait
 import org.springframework.messaging.rsocket.dataWithType
 import org.springframework.messaging.rsocket.retrieveFlow
-import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.*
 import org.springframework.web.reactive.function.server.ServerResponse.*
 import reactor.core.publisher.ReplayProcessor
 
-@Component("webfluxMessageHandler")
 class MessageHandler(private val builder: RSocketRequester.Builder) {
 
 	private val processor = ReplayProcessor.create<Message>(0)

@@ -38,16 +38,14 @@ suspend fun main() {
 		}
 	}
 
-	GlobalScope.launch {
-		EventSource("/message/stream").asFlow()
-				.map { JSON.parse<Message>(it) }
-				.collect {
-					val li = document.createElement("li").apply {
-						innerHTML = "<b>${it.user}</b> ${it.content}"
-					}
-					document.getElementById("messages")!!.appendChild(li)
+	EventSource("/message/stream").asFlow()
+			.map { JSON.parse<Message>(it) }
+			.collect {
+				val li = document.createElement("li").apply {
+					innerHTML = "<b>${it.user}</b> ${it.content}"
 				}
-	}
+				document.getElementById("messages")!!.appendChild(li)
+			}
 }
 
 fun submit(message: Message) {

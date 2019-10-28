@@ -2,11 +2,9 @@ package messenger.backend.web
 
 import messenger.backend.repository.UserRepository
 import org.springframework.http.HttpStatus
-import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.*
 import org.springframework.web.reactive.function.server.ServerResponse.*
 
-@Component
 class UserHandler(private val repository: UserRepository) {
 
 	suspend fun findAll(request: ServerRequest) =

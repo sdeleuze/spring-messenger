@@ -5,14 +5,8 @@ import messenger.shared.model.User
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.event.EventListener
 import org.springframework.data.r2dbc.core.*
-import org.springframework.stereotype.Component
-import org.springframework.transaction.reactive.TransactionalOperator
-import org.springframework.transaction.reactive.executeAndAwait
 
-@Component
-class UserRepository(
-		private val client: DatabaseClient,
-		private val operator: TransactionalOperator) {
+class UserRepository(private val client: DatabaseClient) {
 
 	fun findAll() = client.select().from("users").asType<User>().fetch().flow()
 
@@ -28,15 +22,12 @@ class UserRepository(
 	suspend fun deleteAll() =
 			client.execute("DELETE FROM users").await()
 
-	@EventListener(ApplicationReadyEvent::class)
 	fun init() = runBlocking {
-		operator.executeAndAwait {
-			client.execute("CREATE TABLE IF NOT EXISTS users (login varchar PRIMARY KEY, firstname varchar, lastname varchar);").await()
-			deleteAll()
-			create(User("snicoll", "Stéphane", "Nicoll"))
-			create(User("sdeleuze", "Sébastien", "Deleuze"))
-			create(User("bclozel", "Brian", "Clozel"))
-		}
+		client.execute("CREATE TABLE IF NOT EXISTS users (login varchar PRIMARY KEY, firstname varchar, lastname varchar);").await()
+		deleteAll()
+		create(User("snicoll", "Stéphane", "Nicoll"))
+		create(User("sdeleuze", "Sébastien", "Deleuze"))
+		create(User("bclozel", "Brian", "Clozel"))
 	}
 
 }
