@@ -1,6 +1,6 @@
 rootProject.name = "spring-messenger"
 
-include("backend", "bot")
+include("backend", "frontend", "bot", "shared")
 
 pluginManagement {
 	val springBootVersion = "2.2.0.RELEASE"
@@ -18,6 +18,8 @@ pluginManagement {
 	}
 	plugins {
 		val kotlinVersion = "1.3.50"
+		id("org.jetbrains.kotlin.js") version kotlinVersion apply false
+		id("org.jetbrains.kotlin.multiplatform") version kotlinVersion  apply false
 		id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
 		id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion apply false
 

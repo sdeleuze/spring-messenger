@@ -3,7 +3,7 @@ package messenger.bot
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
-import messenger.bot.model.Message
+import messenger.shared.model.Message
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.stereotype.Controller
 

@@ -1,4 +1,4 @@
-package messenger.bot.model
+package messenger.shared.model
 
 data class Message(
 		val user: String,

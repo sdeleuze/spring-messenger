@@ -1,7 +1,7 @@
 package messenger.bot
 
 import kotlinx.coroutines.runBlocking
-import messenger.bot.model.Message
+import messenger.shared.model.Message
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

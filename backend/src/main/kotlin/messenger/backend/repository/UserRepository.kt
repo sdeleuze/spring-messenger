@@ -1,7 +1,7 @@
 package messenger.backend.repository
 
 import kotlinx.coroutines.runBlocking
-import messenger.backend.model.User
+import messenger.shared.model.User
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.event.EventListener
 import org.springframework.data.r2dbc.core.*
