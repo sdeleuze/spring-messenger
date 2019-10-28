@@ -2,7 +2,7 @@ package messenger.backend
 
 import kotlinx.coroutines.runBlocking
 import messenger.backend.repository.UserRepository
-import messenger.backend.model.User
+import messenger.shared.model.User
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

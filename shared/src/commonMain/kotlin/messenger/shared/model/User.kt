@@ -1,4 +1,4 @@
-package messenger.backend.model
+package messenger.shared.model
 
 data class User(
 		val login: String,

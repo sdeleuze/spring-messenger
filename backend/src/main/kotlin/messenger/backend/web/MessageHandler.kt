@@ -4,7 +4,7 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.flattenMerge
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.reactive.asFlow
-import messenger.backend.model.Message
+import messenger.shared.model.Message
 import org.springframework.http.MediaType.*
 import org.springframework.messaging.rsocket.RSocketRequester
 import org.springframework.messaging.rsocket.connectTcpAndAwait
