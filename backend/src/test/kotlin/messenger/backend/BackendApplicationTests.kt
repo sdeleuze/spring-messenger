@@ -2,7 +2,7 @@ package messenger.backend
 
 import org.junit.jupiter.api.Test
 
-class MessengerApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	fun contextLoads() {
