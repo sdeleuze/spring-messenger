@@ -23,7 +23,7 @@ configurations {
 }
 
 dependencies {
-	implementation("org.springframework.fu:spring-fu-kofu:0.2.1")
+	implementation("org.springframework.fu:spring-fu-kofu:0.2.2")
 	implementation("org.springframework.boot:spring-boot-starter-rsocket")
 	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
