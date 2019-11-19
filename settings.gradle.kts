@@ -3,7 +3,7 @@ rootProject.name = "spring-messenger"
 include("backend", "bot")
 
 pluginManagement {
-	val springBootVersion = "2.2.0.RELEASE"
+	val springBootVersion = "2.2.1.RELEASE"
 	repositories {
 		maven { url = uri("https://repo.spring.io/milestone") }
 		maven { url = uri("https://repo.spring.io/snapshot") }
